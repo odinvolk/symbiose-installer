@@ -1,7 +1,7 @@
 #!/bin/bash
 
-repo="https://github.com/symbiose/symbiose.git"
-zipball="https://github.com/symbiose/symbiose/archive/master.zip"
+repo="https://github.com/odinvolk/symbiose.git"
+zipball="https://github.com/odinvolk/symbiose/master.zip"
 dest="symbiose"
 
 if [ -d "$dest" ] ; then
@@ -24,7 +24,7 @@ cd "$dest"
 httpdUser=`ps -eo user,args | egrep -v "(root|$USER)" | egrep "(apache|httpd|nginx)" | awk 'FNR<2 {print $1}'`
 if [ -z "$httpdUser" ] ; then
 	echo >&2 "Could not determine httpd user!"
-	echo >&2 "If you plan to use Symbiose with httpd, please see https://github.com/symbiose/symbiose/wiki/Installing#copying-files-to-the-server"
+	echo >&2 "If you plan to use Symbiose with httpd, please see https://github.com/odinvolk/symbiose/wiki/Installing#copying-files-to-the-server"
 else
 	echo "Detected httpd user: $httpdUser"
 	echo "Allowing httpd user to read/write files..."
@@ -48,8 +48,8 @@ fi
 
 echo ""
 echo "Symbiose successfully installed in $dest"
-echo "To configure it, see https://github.com/symbiose/symbiose/wiki/Installing#configuration"
+echo "To configure it, see https://github.com/odinvolk/symbiose/wiki/Installing#configuration"
 
 if [ -x /usr/sbin/nginx ] ; then
-	echo "WARNING: If you're using Nginx, you'll have to update your config: see https://github.com/symbiose/symbiose/blob/master/nginx.conf"
+	echo "WARNING: If you're using Nginx, you'll have to update your config: see https://github.com/odinvolk/symbiose/blob/master/nginx.conf"
 fi
