@@ -1,7 +1,7 @@
 #!/bin/bash
 
 repo="https://github.com/odinvolk/symbiose.git"
-zipball="https://github.com/odinvolk/symbiose/master.zip"
+zipball="https://github.com/odinvolk/symbiose/archive/master.zip"
 dest="symbiose"
 
 if [ -d "$dest" ] ; then
